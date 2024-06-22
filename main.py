@@ -94,7 +94,7 @@ def generuj_mape():
 def zaloguj():
     user = input("Użytkownik: ")
     password = input("Hasło: ")
-    if user == "admin" and password == "password":
+    if user == "Jakub" and password == "geoinformatyka rządzi":
         print("Zalogowano pomyślnie!")
         otworz_panel_glowny()
     else:
@@ -104,7 +104,7 @@ def zaloguj():
 # Panel główny
 def otworz_panel_glowny():
     while True:
-        print("\n--- Panel Główny ---")
+        print("--- Panel Główny ---")
         print("1. Dodaj klienta")
         print("2. Wyświetl klientów")
         print("3. Usuń klienta")
