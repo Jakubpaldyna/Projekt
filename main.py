@@ -2,8 +2,8 @@ import folium
 import webbrowser
 
 # Dane
-klienci = [("Jan Kowalski", "52.2297,21.0122"), ("Anna Nowak", "52.2298,21.0123"),
-           ("Piotr Wiśniewski", "52.2299,21.0124")]
+klienci = [("Jan Kowalski", "52.2290,21.0124"), ("Anna Nowak", "52.2292,21.0128"),
+           ("Piotr Wiśniewski", "52.2289,21.0134")]
 kierowcy = [("Marcin Kowalski", "52.2303,21.0128"), ("Tomasz Nowak", "52.2304,21.0129"),
             ("Andrzej Wiśniewski", "52.2305,21.0130")]
 taksowki = [("T123", "52.2297,21.0122"), ("T124", "52.2298,21.0123"), ("T125", "52.2299,21.0124")]
