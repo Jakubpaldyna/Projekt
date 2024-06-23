@@ -1,7 +1,7 @@
 import folium
 import webbrowser
 
-# Dane z zróżnicowanymi współrzędnymi
+# Dane
 klienci = [
     ("Jan Kowalski", "52.2297,21.0122"),
     ("Anna Nowak", "52.2208,21.0103"),
@@ -130,7 +130,7 @@ def generuj_mape():
 def zaloguj():
     user = input("Użytkownik: ")
     password = input("Hasło: ")
-    if user == "admin" and password == "password":
+    if user == "Jakub" and password == "geoinformatyka":
         print("Zalogowano pomyślnie!")
         otworz_panel_glowny()
     else:
