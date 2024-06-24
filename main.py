@@ -3,29 +3,29 @@ import webbrowser
 
 # Dane
 klienci = [
-    ("Jan Kowalski", "52.2297,21.0122"),
-    ("Anna Nowak", "52.2208,21.0103"),
-    ("Piotr Wiśniewski", "52.2409,21.0304"),
-    ("Marek Zalewski", "52.2350,21.0155"),
-    ("Magda Kowalczyk", "52.2233,21.0199"),
-    ("Jacek Wójcik", "52.2377,21.0288"),
-    ("Paweł Zieliński", "52.2155,21.0054"),
-    ("Katarzyna Kwiatkowska", "52.2104,21.0255"),
-    ("Krzysztof Zając", "52.2256,21.0112"),
-    ("Dorota Czarnecka", "52.2323,21.0209"),
-    ("Michał Piotrowski", "52.2305,21.0156"),
-    ("Sylwia Kamińska", "52.2344,21.0167"),
+    ("Janina Wójcicka", "52.2297,21.0122"),
+    ("Anna Koralowska", "52.2208,21.0103"),
+    ("Mateusz Bóbr-Sruański", "52.2409,21.0304"),
+    ("Mariusz Pietnasty", "52.2350,21.0155"),
+    ("Magda Kowalewska", "52.2233,21.0199"),
+    ("Jacek Placek", "52.2377,21.0288"),
+    ("Paweł Prawdziwy", "52.2155,21.0054"),
+    ("Maksiu Rozpoznany", "52.2104,21.0255"),
+    ("Karol Zając", "52.2256,21.0112"),
+    ("Dorota Czarnogrodzka", "52.2323,21.0209"),
+    ("Michał Pietrykowski", "52.2305,21.0156"),
+    ("Sylwia Sylwińska", "52.2344,21.0167"),
 ]
 
 kierowcy = [
-    ("Marcin Kowalski", "52.2333,21.0166"),
-    ("Tomasz Nowak", "52.2364,21.0189"),
-    ("Andrzej Wiśniewski", "52.2399,21.0220"),
-    ("Krzysztof Lewandowski", "52.2268,21.0245"),
-    ("Paweł Kwiatkowski", "52.2287,21.0271"),
-    ("Dominik Nowicki", "52.2224,21.0265"),
+    ("Marcin Rozprawiciel", "52.2333,21.0166"),
+    ("Tomasz z Tomaszowa", "52.2364,21.0189"),
+    ("Andrzej Młyn", "52.2399,21.0220"),
+    ("Robert Błaszczykowski", "52.2268,21.0245"),
+    ("Paweł Kwiatek", "52.2287,21.0271"),
+    ("Dominik Koralewicz", "52.2224,21.0265"),
     ("Jacek Król", "52.2292,21.0188"),
-    ("Łukasz Pawlak", "52.2230,21.0250"),
+    ("Kirchoff Anioł", "52.2230,21.0250"),
 ]
 
 taksowki = [
@@ -45,7 +45,7 @@ rezerwacje = []
 # Funkcje
 
 def dodaj_do_listy(lista, item, coords):
-    lista.append((item, coords))
+    lista. append((item, coords))
     print("Dodano element do listy!")
 
 
