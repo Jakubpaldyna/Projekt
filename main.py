@@ -1,53 +1,47 @@
 import folium
 import webbrowser
+from geopy.geocoders import Nominatim
 
-# Dane
+# Dane początkowe
 klienci = [
     ("Janina Wójcicka", "52.2297,21.0122"),
-    ("Anna Koralowska", "52.2208,21.0103"),
-    ("Mateusz Bóbr-Sruański", "52.2409,21.0304"),
-    ("Mariusz Pietnasty", "52.2350,21.0155"),
-    ("Magda Kowalewska", "52.2233,21.0199"),
-    ("Jacek Placek", "52.2377,21.0288"),
-    ("Paweł Prawdziwy", "52.2155,21.0054"),
-    ("Maksiu Rozpoznany", "52.2104,21.0255"),
-    ("Karol Zając", "52.2256,21.0112"),
-    ("Dorota Czarnogrodzka", "52.2323,21.0209"),
-    ("Michał Pietrykowski", "52.2305,21.0156"),
-    ("Sylwia Sylwińska", "52.2344,21.0167"),
+    ("Anna Koralowska", "50.0647,19.9450"),
+    ("Mateusz Bóbr-Sruański", "52.4064,16.9252"),
 ]
 
 kierowcy = [
-    ("Marcin Rozprawiciel", "52.2333,21.0166"),
-    ("Tomasz z Tomaszowa", "52.2364,21.0189"),
-    ("Andrzej Młyn", "52.2399,21.0220"),
-    ("Robert Błaszczykowski", "52.2268,21.0245"),
-    ("Paweł Kwiatek", "52.2287,21.0271"),
-    ("Dominik Koralewicz", "52.2224,21.0265"),
-    ("Jacek Król", "52.2292,21.0188"),
-    ("Kirchoff Anioł", "52.2230,21.0250"),
+    ("Marcin Rozprawiciel", "52.2297,21.0122"),
+    ("Tomasz z Tomaszowa", "51.1079,17.0385"),
+    ("Andrzej Młyn", "54.3520,18.6466"),
 ]
 
 taksowki = [
-    ("Taksówka nr 1 Honda", "52.2282,21.0255"),
-    ("Taksówka nr 2 Toyota", "52.2278,21.0184"),
-    ("Taksówka nr 3 Ford", "52.2250,21.0200"),
-    ("Taksówka nr 4 Mercedes", "52.2325,21.0215"),
-    ("Taksówka nr 5 BMW", "52.2331,21.0223"),
-    ("Taksówka nr 6 Audi", "52.2300,21.0230"),
-    ("Taksówka nr 7 Skoda", "52.2244,21.0244"),
-    ("Taksówka nr 8 Peugeot", "52.2211,21.0266"),
+    ("Taksówka nr 1 Honda", "52.2297,21.0122"),
+    ("Taksówka nr 2 Toyota", "51.7592,19.4560"),
+    ("Taksówka nr 3 Ford", "53.4285,14.5528"),
 ]
 
 rezerwacje = []
 
+# Geolocator
+geolocator = Nominatim(user_agent="geoapiExercises")
 
 # Funkcje
+def pobierz_wspolrzedne(miejscowosc):
+    location = geolocator.geocode(miejscowosc)
+    if location:
+        return (location.latitude, location.longitude)
+    else:
+        print("Nie znaleziono lokalizacji!")
+        return None
 
-def dodaj_do_listy(lista, item, coords):
-    lista. append((item, coords))
-    print("Dodano element do listy!")
-
+def dodaj_do_listy(lista, item, miejscowosc):
+    wspolrzedne = pobierz_wspolrzedne(miejscowosc)
+    if wspolrzedne:
+        lista.append((item, f"{wspolrzedne[0]},{wspolrzedne[1]}"))
+        print(f"Dodano element {item} do listy!")
+    else:
+        print("Nie można dodać elementu do listy bez współrzędnych!")
 
 def wyswietl_liste(lista):
     if not lista:
@@ -56,8 +50,8 @@ def wyswietl_liste(lista):
         for i, (item, coords) in enumerate(lista, start=1):
             print(f"{i}. {item} - {coords}")
 
-
 def usun_element(lista):
+    wyswietl_liste(lista)
     item = int(input("Podaj numer elementu do usunięcia: ")) - 1
     if 0 <= item < len(lista):
         del lista[item]
@@ -65,21 +59,25 @@ def usun_element(lista):
     else:
         print("Element nie znaleziony!")
 
-
 def aktualizuj_element(lista):
+    wyswietl_liste(lista)
     item = int(input("Podaj numer elementu do aktualizacji: ")) - 1
     if 0 <= item < len(lista):
         new_item = input("Podaj nową wartość: ")
-        new_coords = input("Podaj nowe współrzędne: ")
-        lista[item] = (new_item, new_coords)
-        print("Zaktualizowano element!")
+        miejscowosc = input("Podaj nową miejscowość: ")
+        wspolrzedne = pobierz_wspolrzedne(miejscowosc)
+        if wspolrzedne:
+            lista[item] = (new_item, f"{wspolrzedne[0]},{wspolrzedne[1]}")
+            print("Zaktualizowano element!")
+        else:
+            print("Nie znaleziono lokalizacji!")
     else:
         print("Element nie znaleziony!")
 
-
 def wyswietl_klientow_dla_taksowki():
+    wyswietl_liste(taksowki)
     taksowka = int(input("Podaj numer taksówki: ")) - 1
-    dzien = input("Podaj dzień (YYYY-MM-DD): ")
+    dzien = input("Podaj dzień (DD-MM-YYYY): ")
     if 0 <= taksowka < len(taksowki):
         taksowka_nazwa = taksowki[taksowka][0]
         klienci_w_dniu = [r[2] for r in rezerwacje if r[0] == taksowka_nazwa and r[1] == dzien]
@@ -90,10 +88,11 @@ def wyswietl_klientow_dla_taksowki():
     else:
         print("Niepoprawny numer taksówki!")
 
-
 def dodaj_rezerwacje():
+    wyswietl_liste(taksowki)
     taksowka = int(input("Podaj numer taksówki: ")) - 1
-    dzien = input("Podaj dzień (YYYY-MM-DD): ")
+    dzien = input("Podaj dzień (DD-MM-YYYY): ")
+    wyswietl_liste(klienci)
     klient = int(input("Podaj numer klienta: ")) - 1
     if 0 <= klient < len(klienci) and 0 <= taksowka < len(taksowki):
         klient_nazwa = klienci[klient][0]
@@ -103,9 +102,8 @@ def dodaj_rezerwacje():
     else:
         print("Niepoprawny numer klienta lub taksówki!")
 
-
 def generuj_mape():
-    mapa = folium.Map(location=[52.2297, 21.0122], zoom_start=12)
+    mapa = folium.Map(location=[52.2297, 21.0122], zoom_start=6)
 
     for klient, coords in klienci:
         lat, lon = map(float, coords.split(","))
@@ -125,7 +123,6 @@ def generuj_mape():
     # Otwórz mapę w przeglądarce
     webbrowser.open("mapa.html")
 
-
 # Logowanie
 def zaloguj():
     user = input("Użytkownik: ")
@@ -136,11 +133,10 @@ def zaloguj():
     else:
         print("Niepoprawne dane logowania!")
 
-
 # Panel główny
 def otworz_panel_glowny():
     while True:
-        print("\n--- Panel Główny ---")
+        print("--- Panel Główny ---")
         print("1. Dodaj klienta")
         print("2. Wyświetl klientów")
         print("3. Usuń klienta")
@@ -161,7 +157,7 @@ def otworz_panel_glowny():
         choice = input("Wybierz opcję: ")
 
         if choice == "1":
-            dodaj_do_listy(klienci, input("Podaj imię klienta: "), input("Podaj współrzędne klienta: "))
+            dodaj_do_listy(klienci, input("Podaj imię klienta: "), input("Podaj miejscowość klienta: "))
         elif choice == "2":
             wyswietl_liste(klienci)
         elif choice == "3":
@@ -169,7 +165,7 @@ def otworz_panel_glowny():
         elif choice == "4":
             aktualizuj_element(klienci)
         elif choice == "5":
-            dodaj_do_listy(kierowcy, input("Podaj imię kierowcy: "), input("Podaj współrzędne kierowcy: "))
+            dodaj_do_listy(kierowcy, input("Podaj imię kierowcy: "), input("Podaj miejscowość kierowcy: "))
         elif choice == "6":
             wyswietl_liste(kierowcy)
         elif choice == "7":
@@ -177,7 +173,7 @@ def otworz_panel_glowny():
         elif choice == "8":
             aktualizuj_element(kierowcy)
         elif choice == "9":
-            dodaj_do_listy(taksowki, input("Podaj nazwę taksówki: "), input("Podaj współrzędne taksówki: "))
+            dodaj_do_listy(taksowki, input("Podaj nazwę taksówki: "), input("Podaj miejscowość taksówki: "))
         elif choice == "10":
             wyswietl_liste(taksowki)
         elif choice == "11":
@@ -194,7 +190,6 @@ def otworz_panel_glowny():
             break
         else:
             print("Niepoprawna opcja!")
-
 
 if __name__ == "__main__":
     zaloguj()
