@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_75c793750e247ff155011226a3172526 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_75c793750e247ff155011226a3172526" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_75c793750e247ff155011226a3172526 = L.map(
+                "map_75c793750e247ff155011226a3172526",
+                {
+                    center: [52.2297, 21.0122],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f798f361989736f8903567aa9c514278 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_f798f361989736f8903567aa9c514278.addTo(map_75c793750e247ff155011226a3172526);
+        
+    
+            var marker_a48b3df410feea7b2e5a343d35dd19b1 = L.marker(
+                [52.2297, 21.0122],
+                {}
+            ).addTo(map_75c793750e247ff155011226a3172526);
+        
+    
+        var popup_9d33c92eac1f9bc5d1415d9417a678c2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_166c0afefd67a1c047aef2a1776cd3bc = $(`<div id="html_166c0afefd67a1c047aef2a1776cd3bc" style="width: 100.0%; height: 100.0%;">Klient: Janina Wójcicka</div>`)[0];
+                popup_9d33c92eac1f9bc5d1415d9417a678c2.setContent(html_166c0afefd67a1c047aef2a1776cd3bc);
+            
+        
+
+        marker_a48b3df410feea7b2e5a343d35dd19b1.bindPopup(popup_9d33c92eac1f9bc5d1415d9417a678c2)
+        ;
+
+        
+    
+    
+            var marker_13265c9100e309e1f4c5e064d7c54200 = L.marker(
+                [50.0647, 19.945],
+                {}
+            ).addTo(map_75c793750e247ff155011226a3172526);
+        
+    
+        var popup_dbba6818bbea8f0f808ef54139218d7f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_08a6e6f533a41f3c851b1b579ff29d8f = $(`<div id="html_08a6e6f533a41f3c851b1b579ff29d8f" style="width: 100.0%; height: 100.0%;">Klient: Anna Koralowska</div>`)[0];
+                popup_dbba6818bbea8f0f808ef54139218d7f.setContent(html_08a6e6f533a41f3c851b1b579ff29d8f);
+            
+        
+
+        marker_13265c9100e309e1f4c5e064d7c54200.bindPopup(popup_dbba6818bbea8f0f808ef54139218d7f)
+        ;
+
+        
+    
+    
+            var marker_e66e135e53a93edd23ac3a3985b64a3d = L.marker(
+                [52.4064, 16.9252],
+                {}
+            ).addTo(map_75c793750e247ff155011226a3172526);
+        
+    
+        var popup_891c8ccefa4b615e5ee02d6e10ea819a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1b4e90f459eff1a4c6a8096c371d2694 = $(`<div id="html_1b4e90f459eff1a4c6a8096c371d2694" style="width: 100.0%; height: 100.0%;">Klient: Mateusz Bóbr-Sruański</div>`)[0];
+                popup_891c8ccefa4b615e5ee02d6e10ea819a.setContent(html_1b4e90f459eff1a4c6a8096c371d2694);
+            
+        
+
+        marker_e66e135e53a93edd23ac3a3985b64a3d.bindPopup(popup_891c8ccefa4b615e5ee02d6e10ea819a)
+        ;
+
+        
+    
+    
+            var marker_1e41dcab2a22378c1b40b4f4e9147832 = L.marker(
+                [52.1812046, 21.5587372],
+                {}
+            ).addTo(map_75c793750e247ff155011226a3172526);
+        
+    
+        var popup_1fc18e457b69fde6607c70c5be892bd7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_432eb74dca93b5b1d726cf022a7019fb = $(`<div id="html_432eb74dca93b5b1d726cf022a7019fb" style="width: 100.0%; height: 100.0%;">Klient: Jakub Pałdini</div>`)[0];
+                popup_1fc18e457b69fde6607c70c5be892bd7.setContent(html_432eb74dca93b5b1d726cf022a7019fb);
+            
+        
+
+        marker_1e41dcab2a22378c1b40b4f4e9147832.bindPopup(popup_1fc18e457b69fde6607c70c5be892bd7)
+        ;
+
+        
+    
+    
+            var marker_2dcdfa2f75c576864593d7b47b90155b = L.marker(
+                [52.2297, 21.0122],
+                {}
+            ).addTo(map_75c793750e247ff155011226a3172526);
+        
+    
+        var popup_b4f15b0619c1e16afd9c0fb1efd58f2b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_98a110c03b9ed3eef31f03bc39ed9771 = $(`<div id="html_98a110c03b9ed3eef31f03bc39ed9771" style="width: 100.0%; height: 100.0%;">Kierowca: Marcin Rozprawiciel</div>`)[0];
+                popup_b4f15b0619c1e16afd9c0fb1efd58f2b.setContent(html_98a110c03b9ed3eef31f03bc39ed9771);
+            
+        
+
+        marker_2dcdfa2f75c576864593d7b47b90155b.bindPopup(popup_b4f15b0619c1e16afd9c0fb1efd58f2b)
+        ;
+
+        
+    
+    
+            var marker_3b92c3681200654e849d576c70e3deb8 = L.marker(
+                [51.1079, 17.0385],
+                {}
+            ).addTo(map_75c793750e247ff155011226a3172526);
+        
+    
+        var popup_cfa22f85108b391c9dfad09f8b2a1a93 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4079224ab2f59a510c9c492e1b211168 = $(`<div id="html_4079224ab2f59a510c9c492e1b211168" style="width: 100.0%; height: 100.0%;">Kierowca: Tomasz z Tomaszowa</div>`)[0];
+                popup_cfa22f85108b391c9dfad09f8b2a1a93.setContent(html_4079224ab2f59a510c9c492e1b211168);
+            
+        
+
+        marker_3b92c3681200654e849d576c70e3deb8.bindPopup(popup_cfa22f85108b391c9dfad09f8b2a1a93)
+        ;
+
+        
+    
+    
+            var marker_cefa6626d48f220e6263c3514f1ee0d8 = L.marker(
+                [54.352, 18.6466],
+                {}
+            ).addTo(map_75c793750e247ff155011226a3172526);
+        
+    
+        var popup_c2cfa87d36b590ea0fb288374db95b28 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9c9bc9edba87bc7eec3b87d6215c3d6f = $(`<div id="html_9c9bc9edba87bc7eec3b87d6215c3d6f" style="width: 100.0%; height: 100.0%;">Kierowca: Andrzej Młyn</div>`)[0];
+                popup_c2cfa87d36b590ea0fb288374db95b28.setContent(html_9c9bc9edba87bc7eec3b87d6215c3d6f);
+            
+        
+
+        marker_cefa6626d48f220e6263c3514f1ee0d8.bindPopup(popup_c2cfa87d36b590ea0fb288374db95b28)
+        ;
+
+        
+    
+    
+            var marker_131f85faa68fd826269572aecbce91da = L.marker(
+                [52.2297, 21.0122],
+                {}
+            ).addTo(map_75c793750e247ff155011226a3172526);
+        
+    
+        var popup_28d4f913a0cc7c038b70e6a97f130326 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_26fa19b61d20e51365b299af766cf192 = $(`<div id="html_26fa19b61d20e51365b299af766cf192" style="width: 100.0%; height: 100.0%;">Taksówka: Taksówka nr 1 Honda</div>`)[0];
+                popup_28d4f913a0cc7c038b70e6a97f130326.setContent(html_26fa19b61d20e51365b299af766cf192);
+            
+        
+
+        marker_131f85faa68fd826269572aecbce91da.bindPopup(popup_28d4f913a0cc7c038b70e6a97f130326)
+        ;
+
+        
+    
+    
+            var marker_e8b42c86cef6102a95c254efab0e5813 = L.marker(
+                [51.7592, 19.456],
+                {}
+            ).addTo(map_75c793750e247ff155011226a3172526);
+        
+    
+        var popup_63413ef1147f42e192c669bc02e950e4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_89d875aa8f66fe3ab520df2bc3309d7e = $(`<div id="html_89d875aa8f66fe3ab520df2bc3309d7e" style="width: 100.0%; height: 100.0%;">Taksówka: Taksówka nr 2 Toyota</div>`)[0];
+                popup_63413ef1147f42e192c669bc02e950e4.setContent(html_89d875aa8f66fe3ab520df2bc3309d7e);
+            
+        
+
+        marker_e8b42c86cef6102a95c254efab0e5813.bindPopup(popup_63413ef1147f42e192c669bc02e950e4)
+        ;
+
+        
+    
+    
+            var marker_459c64b74427b3c1bcc4c728dd4e9974 = L.marker(
+                [53.4285, 14.5528],
+                {}
+            ).addTo(map_75c793750e247ff155011226a3172526);
+        
+    
+        var popup_e3219c89c5699b5b4a8ff353205cec20 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8b3a247692a7f5978c62a2fa7128e81d = $(`<div id="html_8b3a247692a7f5978c62a2fa7128e81d" style="width: 100.0%; height: 100.0%;">Taksówka: Taksówka nr 3 Ford</div>`)[0];
+                popup_e3219c89c5699b5b4a8ff353205cec20.setContent(html_8b3a247692a7f5978c62a2fa7128e81d);
+            
+        
+
+        marker_459c64b74427b3c1bcc4c728dd4e9974.bindPopup(popup_e3219c89c5699b5b4a8ff353205cec20)
+        ;
+
+        
+    
+</script>
+</html>
