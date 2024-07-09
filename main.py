@@ -1,4 +1,3 @@
-import requests
 import folium
 import webbrowser
 from geopy.geocoders import Nominatim
@@ -129,7 +128,6 @@ def wyswietl_rezerwacje_dla_taksowki():
             print(f"Brak rezerwacji dla taksówki {taksowka_nazwa}.")
     else:
         print("Niepoprawny numer taksówki!")
-
 
 def generuj_mape_klientow():
     mapa = folium.Map(location=[52.2297, 21.0122], zoom_start=6)
